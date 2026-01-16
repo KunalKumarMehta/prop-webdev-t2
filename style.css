@@ -1,0 +1,167 @@
+:root {
+    --bg-color: #1a0b0b;
+    --text-color: #e0e0e0;
+    --accent-red: #ff3333;
+    --accent-green: #33ff33;
+    --accent-gold: #ffd700;
+    --font-main: 'Roboto Mono', monospace;
+    --font-heading: 'Creepster', display;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#app {
+    width: 800px;
+    height: 600px;
+    border: 4px solid var(--accent-red);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px var(--accent-red);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Screens */
+.screen {
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    color: var(--accent-red);
+    text-shadow: 0 0 10px var(--accent-red);
+    margin-bottom: 20px;
+}
+
+button {
+    background: transparent;
+    border: 2px solid var(--accent-red);
+    color: var(--accent-red);
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+button:hover {
+    background: var(--accent-red);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--accent-red);
+}
+
+/* Game Interface */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--accent-red);
+    padding-bottom: 10px;
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-gold);
+}
+
+.monster-container {
+    margin-bottom: 40px;
+    position: relative;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.monster {
+    font-size: 6rem;
+    filter: drop-shadow(0 0 10px rgba(255, 51, 51, 0.5));
+    transition: transform 0.2s;
+}
+
+.word-display {
+    font-size: 2.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px 40px;
+    border-radius: 10px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    min-height: 80px;
+}
+
+.char-default {
+    color: #888;
+}
+
+.char-correct {
+    color: var(--accent-green);
+    text-shadow: 0 0 5px var(--accent-green);
+}
+
+.char-active {
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+/* Animations */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+    color: var(--accent-red) !important;
+}
+
+@keyframes die {
+    0% { transform: scale(1) rotate(0); opacity: 1; }
+    100% { transform: scale(0) rotate(180deg); opacity: 0; }
+}
+
+.die {
+    animation: die 0.5s forwards;
+}
+
+.game-over-screen h2 {
+    font-size: 3rem;
+    color: var(--accent-red);
+    font-family: var(--font-heading);
+}
+
+.result {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
